@@ -16,7 +16,7 @@ public class EntityManagerTest {
         try {
 
             manager.getTransaction().begin();
-            User user = new User ("Andrei","admin", false);
+            User user = new User ("Andrei", "Lavrinovich", "Login", "Net", false);
             manager.persist(user);
             manager.getTransaction().commit();
 

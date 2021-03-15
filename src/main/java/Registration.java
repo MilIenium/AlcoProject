@@ -6,14 +6,14 @@ public class Registration {
     private EntityManagerFactory factory;
     private EntityManager manager;
 
-    public void smokeTest(){
+    public String registerUser(){
         factory = Persistence.createEntityManagerFactory("TestPersistenceUnit");
         manager = factory.createEntityManager();
 
         try {
 
                 manager.getTransaction().begin();
-                User user = new User ("Andrei","admin", false);
+                User user = new User ("Andrei", "Lavrinovich", "Login", "Net", false);
                 manager.persist(user);
                 manager.getTransaction().commit();
 
@@ -24,4 +24,7 @@ public class Registration {
 
         }
     }
+
+    return "calendar"
+
 }

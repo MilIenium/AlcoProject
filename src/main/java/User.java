@@ -11,6 +11,13 @@ public class User {
     @GeneratedValue
     private int id;
 
+    @Column(nullable = false, length = 100)
+    private String firstName;
+
+    @Column(nullable = false, unique = true, length = 50)
+    private String secondName;
+
+
     @Column(nullable = false, unique = true, length = 50)
     private String login;
 
@@ -26,10 +33,10 @@ public class User {
     @Transient
     private String test;
 
-    public User() {
-    }
+    public User(String firstName, String secondName, String login, String password, boolean isAdmin) {
 
-    public User(String login, String password, boolean isAdmin) {
+        this.firstName = firstName;
+        this.secondName = secondName;
         this.login = login;
         this.password = password;
         this.isAdmin = isAdmin;
@@ -41,6 +48,22 @@ public class User {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getSecondName() {
+        return secondName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
     }
 
     public String getLogin() {
