@@ -6,7 +6,7 @@ public class Registration {
     private EntityManagerFactory factory;
     private EntityManager manager;
 
-    public String registerUser(){
+    public void registerUser(){
         factory = Persistence.createEntityManagerFactory("TestPersistenceUnit");
         manager = factory.createEntityManager();
 
@@ -24,7 +24,5 @@ public class Registration {
 
         }
     }
-
-    return "calendar"
 
 }
